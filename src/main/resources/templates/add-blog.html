@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head data-th-replace="~{fragment::head-section}"> </head>
+  <body>
+
+    <link rel="stylesheet" href="/css/add-blog.css" />
+
+    <header data-th-replace="fragment::header-section"></header>
+
+    <main>
+      <section>
+        
+        <div data-th-replace="fragment::link-container(url='/blogs',name='Back')"></div>
+
+        <div class="container">
+          <form action="/add-blog" method="post">
+            <h1>Fill the details</h1>
+            <p>
+              dont write a use less content because it is a popular blog website
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Deserunt, dolorum!
+            </p>
+            <div id="add-image">
+              <img src="/imgs/default.jpg" id="previewImage" />
+              <input type="file" id="fileInput" />
+            </div>
+            <input
+              id="title"
+              class="data"
+              type="text"
+              name="heading"
+              placeholder="Enter your title"
+            />
+            <input
+              id="author"
+              class="data"
+              type="text"
+              name="author"
+              placeholder="Enter author name"
+            />
+            <textarea
+              id="content"
+              class="data"
+              cols="30"
+              rows="10"
+              name="description"
+              placeholder="write your content here"
+            ></textarea>
+
+            <button type="submit">Add</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      function previewFile() {
+        const fileInput = document.getElementById("fileInput");
+        const previewImage = document.getElementById("previewImage");
+
+        const file = fileInput.files[0];
+        const reader = new FileReader();
+
+        reader.onloadend = function () {
+          previewImage.src = reader.result;
+        };
+
+        if (file) {
+          reader.readAsDataURL(file);
+        } else {
+          previewImage.src = "";
+        }
+      }
+    </script>
+  </body>
+</html>

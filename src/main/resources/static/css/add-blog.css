@@ -1,0 +1,90 @@
+:root {
+  color-scheme: dark white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #1c1c1c;
+}
+
+.container {
+  padding: 3rem;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container form {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(100px, 300px) 1fr;
+  grid-template-rows: repeat(2, 50px) 1fr;
+  grid-template-areas: "heading title" "description author" "image data";
+  grid-gap: 10px;
+}
+
+form h1 {
+  grid-area: heading;
+  color: crimson;
+  justify-self: center;
+}
+form p {
+  grid-area: description;
+  justify-self: center;
+  
+  /* color: red; */
+}
+#add-image{
+    grid-area: image;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+#add-image img{
+    text-align: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+
+}
+
+#title {
+  grid-area: title;
+}
+#author {
+  grid-area: author;
+}
+#content {
+  grid-area: data;
+  resize: none;
+}
+.data{
+    padding: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+button{
+  color: black;
+  border: 1px solid white;
+  padding: .7rem 1.5rem;
+  border-radius: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.3rem;
+  background-color: rgb(3, 232, 152);
+  transition: all .5s;
+}
+button:hover{
+  
+  transform: translateY(-10px);
+}

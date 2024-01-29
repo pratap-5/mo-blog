@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>view blog</title>
+</head>
+<body>
+    
+    <link rel="stylesheet" href="/css/blog.css"/>
+    
+
+    <header data-th-replace="fragment::header-section">
+
+    </header>
+    <main>
+        <section>
+            <div data-th-replace="fragment::link-container(url='/blogs',name='Back')">
+
+            </div>
+
+            <div class="container" data-th-object="${blog}">
+                <h1 data-th-text="*{heading}"></h1>
+                <h3 data-th-text="*{author}"></h3>
+                <hr>
+               <p data-th-text="*{description}"></p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

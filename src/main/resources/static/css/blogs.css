@@ -1,0 +1,70 @@
+:root {
+  color-scheme: dark white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #1c1c1c;
+}
+
+.blogs {
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-auto-rows:300px ;
+  gap: 1rem;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.blog {
+  padding: .5rem;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  align-items: center;
+  grid-template-areas: "index  heading" "index description" "index link";
+  background:linear-gradient(-45deg, rgba(55, 53, 53, 0.277), rgba(116, 80, 104, 0.216));
+  transition: all .3s linear;
+}
+.blog h2:first-child {
+  grid-area: index;
+  justify-self: left;
+  align-self:self-end;
+}
+.blog h2:nth-child(2) {
+  color: rgb(0, 241, 160);
+  grid-area: heading;
+  font-size: 3rem;
+}
+.blog p {
+  grid-area: description;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.blog a {
+  grid-area: link;
+  justify-self: right;
+  border: 1px solid #fff;
+  color: white;
+  text-decoration: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.blog a:hover {
+  transform: translateY(-1px);
+  color: #1c1c1c;
+}
+.blog:hover{
+  transform: translateY(-3px);
+  background-color: #ff0059;
+}
