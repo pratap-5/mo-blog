@@ -96,10 +96,12 @@
 
   }
   .container h1{
+    text-transform: uppercase;
     color: #fff;
     font-size: 3rem;
   }
   .container h3{
+    text-transform: capitalize;
     display: inline-block;
     color: rgb(188, 2, 61);
   }
@@ -108,7 +110,7 @@
     margin-block: 20px;
     padding: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: start x;
+    text-align: justify;
     background-color: #151212;
     border-radius: 30px;
   }
